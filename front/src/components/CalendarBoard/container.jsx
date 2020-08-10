@@ -6,8 +6,9 @@ const mapStateToProps = state => ({
   calendar: state.calendar
 });
 
-const margeProps = stateProps => ({
+const mergeProps = (stateProps, dispatchProps) => ({
+  month: stateProps.calendar,
   calendar: createCalendar(stateProps.calendar)
 });
 
-export default connect(mapStateToProps, null, margeProps)(CalendarBoard);
+export default connect(mapStateToProps, null, mergeProps)(CalendarBoard);
